@@ -8,25 +8,58 @@ const BookDetails = () => {
 
     const book = books.find(singleBook=>singleBook.bookId==id);
 
-    const {image,bookName,author,review,totalPages,tags,publisher,yearOfPublishing,category}=book
+    const {image,bookName,author,review,totalPages,tags,publisher,yearOfPublishing,category,rating}=book
 
-  console.log(book)
     return (
-        <div className="mt-10">
+        <div className="mt-10 w-11/12 mx-auto mb-5">
 
-            <div className="flex gap-25 justify-evenly items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
 
                 <div>
-                    <img className="w-96" src={image} alt="" />
+                    <img src={image} alt="" />
                 </div>
 
-                <div>
+                <div className="space-y-2">
                     
                     <div>
-                        <h1>{bookName}</h1>
+                        <h1 className="text-3xl font-bold">{bookName}</h1>
+                    </div>
+                    <hr />
+                    <div>
+                        <h1><span className="text-lg font-bold">Written By: </span>{author}</h1>
+                    </div>
+                    <hr />
+                    <div>
+                        <h1><span className="text-lg font-bold">Category: </span>{category}</h1>
+                    </div>
+                    <hr />
+                    <div>
+                        <p><span className="text-lg font-bold">Review: </span>{review}</p>
+                    </div>
+                    <div className="flex gap-10">
+                        <span className="text-lg font-bold">Tags:</span>
+                        <h1 className="text-green-600">#{tags[0]}</h1>
+                        <h1 className="text-green-600">#{tags[1]}</h1>
+                    </div>
+                    <hr />
+                    <div>
+                        <h1>Number of Pages:     <span className=" font-bold">{totalPages}</span></h1>
                     </div>
                     <div>
-                        <h1>{author}</h1>
+                        <h1>Publisher:     <span className=" font-bold">{publisher}</span></h1>
+                    </div>
+
+                    <div>
+                        <h1>Year of Publishing:     <span className="font-bold">{yearOfPublishing}</span></h1>
+                    </div>
+
+                    <div>
+                        <h1>Rating:     <span className=" font-bold">{rating}</span></h1>
+                    </div>
+
+                    <div className="flex gap-5">
+                    <button className="btn font-bold">Read</button>
+                    <button className="btn btn-active text-white btn-accent">Wishlist</button>
                     </div>
 
 

@@ -10,13 +10,13 @@ const Navbar = () => {
 		<h1 className="text-3xl font-extrabold hidden lg:block">Book Heaven</h1>
 		<ul className=" gap-5 flex items-center justify-center">
 			<li className="flex">
-				<NavLink to={"/"}>Home</NavLink>
+				<NavLink to={"/"}  className={({isActive})=>isActive?"text-green-500 border-2 rounded-xl border-green-500 p-1":" "}>Home</NavLink>
 			</li>
 			<li className="flex">
-	<NavLink to={"/listedBooks"}>Listed Books</NavLink>
+	<NavLink to={"/listedBooks"} className={({isActive})=>isActive?"text-green-500 border-2 rounded-xl border-green-500 p-1":" "}>Listed Books</NavLink>
 			</li>
 			<li className="flex">
-			<NavLink to={"/PageToRead"}>Page To Read</NavLink>
+			<NavLink to={"/PageToRead"}  className={({isActive})=>isActive?"text-green-500 rounded-xl border-2 border-green-500 p-1":" "}>Page To Read</NavLink>
 			</li>
 			<li className="flex">
 				Coming 
