@@ -19,10 +19,10 @@ const Navbar = () => {
 			<NavLink to={"/PageToRead"}  className={({isActive})=>isActive?"text-green-500 rounded-xl border-2 border-green-500 p-1":" "}>Page To Read</NavLink>
 			</li>
 			<li className="flex">
-				Coming 
+			<NavLink to={"/upcoming"}  className={({isActive})=>isActive?"text-green-500 rounded-xl border-2 border-green-500 p-1":" "}>Upcoming</NavLink>
 			</li>
 			<li className="flex">
-				Coming 
+			<NavLink to={"/payment"}  className={({isActive})=>isActive?"text-green-500 rounded-xl border-2 border-green-500 p-1":" "}>Payment</NavLink>
 			</li>
 		</ul>
 		<div className="items-center flex-shrink-0 gap-3  hidden lg:flex">
