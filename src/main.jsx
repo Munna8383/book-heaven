@@ -14,6 +14,7 @@ import Upcoming from './Component/Upcoming/Upcoming';
 import Payment from './Component/Payment/Payment';
 import ReadPage from './Component/ReadPage/ReadPage';
 import WishList from './Component/WishList/WishList';
+import Charts from './Component/Charts/Charts';
 
 
 const router = createBrowserRouter([
@@ -42,7 +43,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/pageToRead",
-        element:<ReadPage></ReadPage>
+        element:<Charts></Charts>
       },
       {
         path:"/:id",

@@ -21,10 +21,10 @@ const BookDetails = () => {
     return (
         <div className="mt-10 w-11/12 mx-auto mb-5">
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
+            <div className="grid gap-5 grid-cols-1 lg:grid-cols-2 items-center">
 
                 <div>
-                    <img src={image} alt="" />
+                    <img width={400 } height={300} src={image} alt="" />
                 </div>
 
                 <div className="space-y-2">
