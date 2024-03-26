@@ -9,10 +9,12 @@ import MainLayout from './MainLayout/MainLayout';
 import ErrorPage from './ErrorPage/ErrorPage';
 import Home from './Component/Home/Home';
 import ListedBooks from './Component/ListedBooks/ListedBooks';
-import PageToRead from './Component/PageToRead/PageToRead';
 import BookDetails from './Component/BookDetails/BookDetails';
 import Upcoming from './Component/Upcoming/Upcoming';
 import Payment from './Component/Payment/Payment';
+import ReadPage from './Component/ReadPage/ReadPage';
+import WishList from './Component/WishList/WishList';
+
 
 const router = createBrowserRouter([
   {
@@ -26,11 +28,21 @@ const router = createBrowserRouter([
       },
       {
         path:"/listedBooks",
-        element:<ListedBooks></ListedBooks>
+        element:<ListedBooks></ListedBooks>,
+        children:[
+          {
+            index:true,
+            element:<ReadPage></ReadPage>
+          },
+          {
+            path:"/listedBooks/wishList",
+            element:<WishList></WishList>
+          }
+        ]
       },
       {
         path:"/pageToRead",
-        element:<PageToRead></PageToRead>
+        element:<ReadPage></ReadPage>
       },
       {
         path:"/:id",
