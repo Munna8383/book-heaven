@@ -12,8 +12,8 @@ const ListedBooks = () => {
             <div className="dropdown dropdown-hover mt-5 flex justify-center">
                 <div tabIndex={0} role="button" className="btn m-1 bg-green-500 text-white">Sort By</div>
                 <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a>Item 1</a></li>
-                    <li><a>Item 2</a></li>
+                    <li><a>Rating</a></li>
+                    <li><a>Pages</a></li>
                 </ul>
             </div>
             <div className="mt-5">

@@ -1,7 +1,8 @@
 import { useLoaderData, useParams } from "react-router-dom";
-import { saveTolocalStorage } from "../../utility/utility";
-
-
+import { getDataFromLocal, saveTolocalStorage } from "../../utility/utility";
+import { useEffect, useState } from "react";
+import { saveWishTolocalStorage } from "../../utility/wishList";
+import Swal from "sweetalert2";
 
 const BookDetails = () => {
 
@@ -12,11 +13,37 @@ const BookDetails = () => {
 
     const {image,bookName,author,review,totalPages,tags,publisher,yearOfPublishing,category,rating}=book
 
+
+    // extra
+
+    const [readData,setReadData]=useState([]);
+
+    useEffect(()=>{
+        setReadData(getDataFromLocal())
+    },[])
+
+    const handleWishList=()=>{
+
+        const exist = readData.find(item=>item.bookId==book.bookId)
+
+      if(exist){
+        Swal.fire("Already Read");
+      }
+      else{
+        saveWishTolocalStorage(book)
+      }
+    }
+
+    // qq
+   
+
     const handleRead =()=>{
 
         saveTolocalStorage(book)
+
       
     }
+   
 
     return (
         <div className="mt-10 w-11/12 mx-auto mb-5">
@@ -67,7 +94,7 @@ const BookDetails = () => {
 
                     <div className="flex gap-5">
                     <button onClick={handleRead} className="btn font-bold">Read</button>
-                    <button className="btn btn-active text-white btn-accent">Wishlist</button>
+                    <button onClick={handleWishList} className="btn btn-active text-white btn-accent">Wishlist</button>
                     </div>
 
 
