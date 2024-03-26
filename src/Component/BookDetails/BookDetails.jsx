@@ -26,6 +26,7 @@ const BookDetails = () => {
 
         const exist = readData.find(item=>item.bookId==book.bookId)
 
+
       if(exist){
         Swal.fire("Already Read");
       }

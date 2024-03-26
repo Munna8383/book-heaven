@@ -7,8 +7,8 @@ const Banner = () => {
             <div  className="flex justify-around items-center ">
                 <div className="space-y-10">
 
-                    <h1 className="text-xl font-bold lg:text-3xl">Books To Freshen</h1>
-                    <h1 className="text-xl font-bold lg:text-3xl">Up Your Bookshelf</h1>
+                    <h1 className="text-sm font-bold lg:text-3xl">Books To Freshen</h1>
+                    <h1 className="text-sm font-bold lg:text-3xl">Up Your Bookshelf</h1>
                  <div>
                  <Link to={"/listedBooks"}> <button className="btn text-white btn-success">View The List</button></Link>
                  </div>
