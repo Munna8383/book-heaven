@@ -19,7 +19,9 @@ const BookDetails = () => {
     const [readData,setReadData]=useState([]);
 
     useEffect(()=>{
+
         setReadData(getDataFromLocal())
+
     },[])
 
     const handleWishList=()=>{
@@ -41,7 +43,7 @@ const BookDetails = () => {
     const handleRead =()=>{
 
         saveTolocalStorage(book)
-
+        setReadData([...readData,book])
       
     }
    

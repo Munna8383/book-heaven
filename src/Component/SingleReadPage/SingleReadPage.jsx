@@ -2,10 +2,20 @@
 import { CiLocationOn } from "react-icons/ci";
 import { MdContactPage } from "react-icons/md";
 import { FaBook } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const SingleReadPage = ({item}) => {
 
-    const {image,bookName,author,tags,yearOfPublishing,publisher,category,rating,totalPages}=item
+    const navigate = useNavigate()
+
+    const handleViewDetails=() =>{
+
+        navigate(`/${bookId}`)
+
+
+    }
+
+    const {bookId,image,bookName,author,tags,yearOfPublishing,publisher,category,rating,totalPages}=item
     return (
         <div className="flex flex-col lg:flex-row justify-around border-gray-500 border rounded xl items-center p-5">
 
@@ -54,7 +64,7 @@ const SingleReadPage = ({item}) => {
                     </div>
 
                     <div>
-                    <button className="btn btn-success text-white">View Details</button>
+                    <button onClick={handleViewDetails} className="btn btn-success text-white">View Details</button>
                     </div>
                 </div>
             </div>

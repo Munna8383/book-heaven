@@ -2,10 +2,19 @@
 import { CiLocationOn } from "react-icons/ci";
 import { MdContactPage } from "react-icons/md";
 import { FaBook } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const SingleWishlist = ({wish}) => {
 
-    const {image,bookName,author,tags,yearOfPublishing,publisher,category,rating,totalPages}=wish
+    const navigate = useNavigate()
+
+    const handleWishViewDetails=()=>{
+
+        navigate(`/${bookId}`)
+
+    }
+
+    const {bookId,image,bookName,author,tags,yearOfPublishing,publisher,category,rating,totalPages}=wish
     return (
         <div>
 
@@ -56,7 +65,7 @@ const SingleWishlist = ({wish}) => {
         </div>
 
         <div>
-        <button className="btn btn-success text-white">View Details</button>
+        <button onClick={handleWishViewDetails} className="btn btn-success text-white">View Details</button>
         </div>
     </div>
 </div>
